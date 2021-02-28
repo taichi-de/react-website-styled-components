@@ -1,4 +1,6 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Container, Button } from '../../globalStyles';
 import {
   InfoSec,
   InfoRow,
@@ -8,26 +10,24 @@ import {
   Heading,
   Subtitle,
   ImgWrapper,
-  Img,
-} from "./InfoSection.elements";
-import { Container, Button } from "../../globalStyles";
-import { Link } from "react-router-dom";
+  Img
+} from './InfoSection.elements';
 
-const InfoSection = ({
+function InfoSection({
+  primary,
   lightBg,
-  imgStart,
+  topLine,
   lightTopLine,
   lightText,
   lightTextDesc,
-  buttonLabel,
-  topLine,
   headline,
   description,
-  primary,
+  buttonLabel,
   img,
   alt,
-  start,
-}) => {
+  imgStart,
+  start
+}) {
   return (
     <>
       <InfoSec lightBg={lightBg}>
@@ -38,8 +38,8 @@ const InfoSection = ({
                 <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
-                <Link to="/sign-up">
-                  <Button primary={primary} fontBig big>
+                <Link to='/sign-up'>
+                  <Button big fontBig primary={primary}>
                     {buttonLabel}
                   </Button>
                 </Link>
@@ -47,7 +47,7 @@ const InfoSection = ({
             </InfoColumn>
             <InfoColumn>
               <ImgWrapper start={start}>
-                <Img src={img} als={alt} />
+                <Img src={img} alt={alt} />
               </ImgWrapper>
             </InfoColumn>
           </InfoRow>
@@ -55,6 +55,6 @@ const InfoSection = ({
       </InfoSec>
     </>
   );
-};
+}
 
 export default InfoSection;

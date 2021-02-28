@@ -1,24 +1,26 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-*{
+  * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Source Sans Pro', sans-serif;
-}
+ }
 `;
 
 export const Container = styled.div`
   z-index: 1;
   width: 100%;
   max-width: 1300px;
-  margin: 0 auto;
-  /* right, leftに区切らなきゃ？ */
-  padding: 0 50px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 50px;
+  padding-left: 50px;
 
   @media screen and (max-width: 991px) {
-    padding: 0 30px;
+    padding-right: 30px;
+    padding-left: 30px;
   }
 `;
 
@@ -32,12 +34,14 @@ export const Button = styled.button`
   outline: none;
   border: none;
   cursor: pointer;
+
   &:hover {
     transition: all 0.3s ease-out;
     background: #fff;
-    background: ${({ primary }) => (primary ? "#0467FB" : "#4B59F7")};
+    background-color: ${({ primary }) => (primary ? "#0467FB" : "#4B59F7")};
   }
-  @media screen and (max-width: 991px) {
+
+  @media screen and (max-width: 960px) {
     width: 100%;
   }
 `;
